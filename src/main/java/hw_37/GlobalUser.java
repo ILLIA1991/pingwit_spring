@@ -1,4 +1,4 @@
-package pl.pingwit.springbootfirst.hw_37;
+package hw_37;
 
 import com.zaxxer.hikari.HikariDataSource;
 import jakarta.annotation.PostConstruct;

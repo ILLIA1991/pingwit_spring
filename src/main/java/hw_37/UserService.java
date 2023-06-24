@@ -1,4 +1,4 @@
-package pl.pingwit.springbootfirst.hw_37;
+package hw_37;
 
 import org.springframework.stereotype.Component;
 

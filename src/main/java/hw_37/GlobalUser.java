@@ -1,12 +1,13 @@
 package hw_37;
 
-import com.zaxxer.hikari.HikariDataSource;
+
+//import com.zaxxer.hikari.HikariDataSource;
 import jakarta.annotation.PostConstruct;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
-import javax.sql.DataSource;
-@Component
+//import javax.sql.DataSource;
+//@Component
 public class GlobalUser {
 
     private final UserService userService;
@@ -18,28 +19,28 @@ public class GlobalUser {
     public GlobalUser(UserService userService) {
         this.userService = userService;
     }
-    @PostConstruct
+//    @PostConstruct
     public void init() {
         userService.printUsers();
     }
 
-    @Bean
-    private static DataSource createDataSource() {
-        HikariDataSource ds = new HikariDataSource();
-        ds.setJdbcUrl(URL);
-        ds.setUsername(USERNAME);
-        ds.setPassword(PASSWORD);
-        return ds;
-    }
-
-    public static void main(String[] args) {
-        DataSource dataSource = createDataSource();
-
-        UserRepository userRepository = new UserRepository(dataSource);
-
-        UserService userService = new UserService(userRepository);
-
-        userService.printUsers();
-    }
+//    @Bean
+//    private static DataSource createDataSource() {
+//        HikariDataSource ds = new HikariDataSource();
+//        ds.setJdbcUrl(URL);
+//        ds.setUsername(USERNAME);
+//        ds.setPassword(PASSWORD);
+//        return ds;
+//    }
+//
+//    public static void main(String[] args) {
+//        DataSource dataSource = createDataSource();
+//
+//        UserRepository userRepository = new UserRepository(dataSource);
+//
+//        UserService userService = new UserService(userRepository);
+//
+//        userService.printUsers();
+//    }
 
 }

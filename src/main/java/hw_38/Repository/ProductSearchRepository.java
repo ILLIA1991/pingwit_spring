@@ -1,8 +1,10 @@
-package hw_38;
+package hw_38.Repository;
 
-import hw_37.Product;
+import hw_38.Model.Product;
 import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -20,9 +22,11 @@ public class ProductSearchRepository {
 
      }
 
-     public Product getById(Integer id) {
+
+     public Product getById( Integer id) {
          return products.get(id);
      }
+
 
      public Collection<Product> getAll() {
          return products.values();
@@ -32,4 +36,11 @@ public class ProductSearchRepository {
          products.remove(productId);
 
     }
+
+    public Integer createProduc(Product productToCreate) {
+         products.put(productToCreate.id(), productToCreate);
+         return productToCreate.id();
+    }
+
+
 }

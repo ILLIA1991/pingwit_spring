@@ -1,17 +1,16 @@
-package hw_38.Repository;
+package Product.Repository;
 
-import hw_38.Model.Product;
+import Product.Model.Product;
 import jakarta.annotation.PostConstruct;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
 @Repository
-public class ProductSearchRepository {
+public class InMemoryProductSearchRepository {
      private Map<Integer, Product> products = new HashMap<>();
 
      @PostConstruct
@@ -24,7 +23,12 @@ public class ProductSearchRepository {
 
 
      public Product getById( Integer id) {
-         return products.get(id);
+         Product product = products.get(id);
+         if (product == null) {
+             throw new RuntimeException("Product not found");
+         } else {
+             return product;
+         }
      }
 
 
@@ -37,7 +41,7 @@ public class ProductSearchRepository {
 
     }
 
-    public Integer createProduc(Product productToCreate) {
+    public Integer createProduct(Product productToCreate) {
          products.put(productToCreate.id(), productToCreate);
          return productToCreate.id();
     }

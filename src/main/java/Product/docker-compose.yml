@@ -1,0 +1,19 @@
+version: '3.5'
+
+services:
+  postgres:
+    container_name: postgres_demo
+    image: postgres:14.8
+    environment:
+      POSTGRES_USER: pingwit
+      POSTGRES_PASSWORD: pingwit_password
+      PGDATA: /data/postgres
+    volumes:
+      - postgres-db:/data/postgres
+    ports:
+      - "5432:5432"
+
+
+volumes:
+  postgres-db:
+    driver: local

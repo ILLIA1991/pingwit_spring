@@ -24,19 +24,19 @@ public class ProductController {
     }
 
     @GetMapping("/product")
-    public List<ProductDTO> searchByName(@RequestParam String name) {
-        return productService.searchByName(name);
+    public List<ProductDTO> searchByDescription(@RequestParam String description) {
+        return productService.searchByDescription(description);
     }
 
     @GetMapping
-    public List<ProductDTO> getAll() {
+    public Collection<ProductDTO> getAll() {
         return productService.getAllProducts();
 
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Integer id) {
-        productService.deleteById(id);
+    public void deleteProduct(@PathVariable Integer id) {
+        productService.deleteProduct(id);
 
     }
 

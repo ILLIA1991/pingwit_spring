@@ -7,16 +7,20 @@ import java.util.List;
 
 public interface ProductRepository {
 
-     Product getById(Integer id);
 
      Collection<Product> getAll();
 
-     void delete(Integer productId);
+     void deleteProduct(Integer productId);
 
      Integer createProduct(Product productToCreate);
 
 
-    List<Product> searchByName(String name);
+    List<Product> searchByDescription(String description);
+
+
+
+    Product getById(Integer id);
+
 }
 
 

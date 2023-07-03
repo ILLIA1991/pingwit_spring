@@ -3,7 +3,6 @@ package Product.Service;
 import Product.Controller.ProductDTO.ProductDTO;
 import Product.Model.Product;
 import Product.ProductConverter.ProductConverter;
-import Product.Repository.InMemoryProductSearchRepository;
 import Product.Repository.ProductRepository;
 import Product.Validator.ProductValidator;
 import org.springframework.stereotype.Service;
@@ -40,14 +39,15 @@ public class ProductServiceImpl implements ProductService {
         return productRepository.createProduct(product);
     }
     @Override
-    public void deleteById(Integer id) {
-        productRepository.delete(id);
+    public void deleteProduct(Integer id) {
+        productRepository.deleteProduct(id);
 
     }
 
+
     @Override
-    public List<ProductDTO> searchByName(String name) {
-        List<Product> productsList = productRepository.searchByName(name);
+    public List<ProductDTO> searchByDescription(String description) {
+        List<Product> productsList = productRepository.searchByDescription(description);
         return productConverter.convertToDto(productsList);
     }
 }

@@ -2,22 +2,20 @@ package Product.Service;
 
 import Product.Controller.ProductDTO.ProductDTO;
 
+import java.util.Collection;
 import java.util.List;
 
 public interface ProductService {
 
-    List<ProductDTO> getAllProducts();
+    Collection<ProductDTO> getAllProducts();
 
     ProductDTO getById(Integer id);
 
-    Integer createProduct(ProductDTO productDTO);
+    Integer createProduct(ProductDTO productToCreate);
 
-    void deleteById(Integer id);
-
-    List<ProductDTO> searchByName(String name);
+    void deleteProduct(Integer id);
 
 
-
-
+    List<ProductDTO> searchByDescription(String description);
 }
 

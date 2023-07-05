@@ -1,6 +1,7 @@
 package Product.Service;
 
 import Product.Controller.ProductDTO.ProductDTO;
+import Product.Controller.ProductDTO.ProductFilterDTO;
 
 import java.util.Collection;
 import java.util.List;
@@ -17,5 +18,13 @@ public interface ProductService {
 
 
     List<ProductDTO> searchByDescription(String description);
+
+
+    ProductDTO updateProduct(Integer id, ProductDTO productToUpdate);
+
+    List<ProductDTO> search(ProductFilterDTO filter);
 }
+
+
+
 

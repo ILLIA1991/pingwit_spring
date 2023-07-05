@@ -32,10 +32,10 @@ public class ProductConverter {
 
     public ProductDTO convertProductToDto(Product source) {
         ProductDTO result = new ProductDTO();
-        result.setId(source.id());
-        result.setName(source.name());
-        result.setDescription(source.description());
-        result.setPrice(source.price());
+        result.setId(source.getId());
+        result.setName(source.getName());
+        result.setDescription(source.getDescription());
+        result.setPrice(source.getPrice());
         return result;
     }
 

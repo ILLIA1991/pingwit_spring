@@ -1,6 +1,7 @@
 package Product.Controller;
 
 import Product.Controller.ProductDTO.ProductDTO;
+import Product.Controller.ProductDTO.ProductFilterDTO;
 import Product.Model.Product;
 import Product.Service.ProductService;
 import org.springframework.web.bind.annotation.*;
@@ -23,7 +24,7 @@ public class ProductController {
         return productService.getById(id);
     }
 
-    @GetMapping("/product")
+    @GetMapping("/search")
     public List<ProductDTO> searchByDescription(@RequestParam String description) {
         return productService.searchByDescription(description);
     }
@@ -44,6 +45,16 @@ public class ProductController {
     public Integer createProduct(@RequestBody ProductDTO productToCreate)  {
         return productService.createProduct(productToCreate);
 
+    }
+
+    @PutMapping("/{id}")
+    public ProductDTO update(@PathVariable Integer id, @RequestBody ProductDTO productToUpdate) {
+        return productService.updateProduct(id, productToUpdate);
+    }
+
+    @PostMapping("/search")
+    public List<ProductDTO> search(@RequestBody ProductFilterDTO filter) {
+        return productService.search(filter);
     }
 
 

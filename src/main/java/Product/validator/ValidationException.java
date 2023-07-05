@@ -1,4 +1,4 @@
-package Product.Validator;
+package product.validator;
 
 public class ValidationException extends RuntimeException {
     public ValidationException(String message) {

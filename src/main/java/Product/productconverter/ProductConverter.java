@@ -1,7 +1,7 @@
-package Product.ProductConverter;
+package Product.productconverter;
 
-import Product.Controller.ProductDTO.ProductDTO;
-import Product.Model.Product;
+import product.controller.ProductDTO.ProductDTO;
+import product.model.Product;
 import org.springframework.stereotype.Component;
 
 import java.util.Collection;

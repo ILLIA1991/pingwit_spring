@@ -1,4 +1,4 @@
-package product.controller.ProductDTO;
+package Product.controller.ProductDTO;
 
 public class ProductFilterDTO {
 

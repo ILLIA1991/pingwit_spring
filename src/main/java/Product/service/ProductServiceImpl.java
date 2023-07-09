@@ -1,11 +1,11 @@
-package product.service;
+package Product.service;
 
-import product.controller.ProductDTO.ProductDTO;
-import product.controller.ProductDTO.ProductFilterDTO;
-import product.model.Product;
-import product.productconverter.ProductConverter;
-import product.repository.SpringDataProductRepository;
-import product.validator.ProductValidator;
+import Product.controller.ProductDTO.ProductDTO;
+import Product.controller.ProductDTO.ProductFilterDTO;
+import Product.model.Product;
+import Product.productconverter.ProductConverter;
+import Product.repository.SpringDataProductRepository;
+import Product.validator.ProductValidator;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

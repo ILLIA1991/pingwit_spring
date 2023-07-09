@@ -1,4 +1,4 @@
-package product.controller.ProductDTO;
+package Product.controller.ProductDTO;
 
 import java.io.Serializable;
 import java.util.Objects;

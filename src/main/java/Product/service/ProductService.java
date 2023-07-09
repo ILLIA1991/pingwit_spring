@@ -1,7 +1,7 @@
-package product.service;
+package Product.service;
 
-import product.controller.ProductDTO.ProductDTO;
-import product.controller.ProductDTO.ProductFilterDTO;
+import Product.controller.ProductDTO.ProductDTO;
+import Product.controller.ProductDTO.ProductFilterDTO;
 
 import java.util.Collection;
 import java.util.List;

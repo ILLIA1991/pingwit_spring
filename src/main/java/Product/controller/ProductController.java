@@ -1,8 +1,8 @@
-package product.controller;
+package Product.controller;
 
-import product.controller.ProductDTO.ProductDTO;
-import product.controller.ProductDTO.ProductFilterDTO;
-import product.service.ProductService;
+import Product.controller.ProductDTO.ProductDTO;
+import Product.controller.ProductDTO.ProductFilterDTO;
+import Product.service.ProductService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;

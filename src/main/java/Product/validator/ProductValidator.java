@@ -1,6 +1,6 @@
-package product.validator;
+package Product.validator;
 
-import product.controller.ProductDTO.ProductDTO;
+import Product.controller.ProductDTO.ProductDTO;
 import org.springframework.stereotype.Component;
 
 @Component

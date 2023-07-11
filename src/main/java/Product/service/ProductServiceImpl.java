@@ -6,6 +6,7 @@ import Product.model.Product;
 import Product.productconverter.ProductConverter;
 import Product.repository.SpringDataProductRepository;
 import Product.validator.ProductValidator;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -56,11 +57,12 @@ public class ProductServiceImpl implements ProductService {
     @Override
     @Transactional(readOnly = true)
     public List<ProductDTO> searchByDescription(String description) {
-        List<Product> productsList = springDataProductRepository.findAllByDescription(description);
+        List<Product> productsList = springDataProductRepository.findAllByNameLikeOrDescriptionLike(description, description);
         return productConverter.convertToDto(productsList);
     }
 
     @Override
+    @Transactional
     public ProductDTO updateProduct(Integer id, ProductDTO productToUpdate) {
         Product product =  springDataProductRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Product not found" + id));
         Product entityToUpdate = productConverter.convertToEntity(productToUpdate);
@@ -71,8 +73,10 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     @Transactional(readOnly = true)
-    public List<ProductDTO> search(ProductFilterDTO filter) {
-        List<Product> allByNameAndDescription = springDataProductRepository.findAllByNameAndDescription(filter.getName(), filter.getDescription());
-        return productConverter.convertToDto(allByNameAndDescription);
+    public List<ProductDTO> search(@NotNull ProductFilterDTO filter) {
+        String nameLike = "%" + filter.getName() + "%";
+        String descriptionLike = "%" + filter.getDescription() + "%";
+        List<Product> allByNameOrDescription = springDataProductRepository.findAllByNameLikeOrDescriptionLike(nameLike, descriptionLike);
+        return productConverter.convertToDto(allByNameOrDescription);
     }
 }

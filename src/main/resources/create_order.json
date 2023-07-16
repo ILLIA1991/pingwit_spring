@@ -1,0 +1,39 @@
+{
+  "user": {
+    "id": 12
+  },
+  "createdAt": "2023-04-13T21:00:00.000+00:00",
+  "comment": "to Wroclaw",
+  "orderItems": [
+    {
+      "product": {
+        "id": 11
+      },
+      "quantity": 2
+    },
+    {
+      "product": {
+        "id": 31
+      },
+      "quantity": 10
+    },
+    {
+      "product": {
+        "id": 41
+      },
+      "quantity": 20
+    },
+    {
+      "product": {
+        "id": 101
+      },
+      "quantity": 2
+    },
+    {
+      "product": {
+        "id": 91
+      },
+      "quantity": 4
+    }
+  ]
+}

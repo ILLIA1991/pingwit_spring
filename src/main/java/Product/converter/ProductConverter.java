@@ -1,4 +1,4 @@
-package Product.productconverter;
+package Product.converter;
 
 import Product.controller.ProductDTO.ProductDTO;
 import Product.repository.model.Product;
@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
-
 @Component
 public class ProductConverter {
 
@@ -22,6 +21,7 @@ public class ProductConverter {
         return convertProductToDto(source);
 
     }
+
     public List<ProductDTO> convertToDto(Collection<Product> source) {
         return source.stream()
                 .map(this::convertProductToDto)
@@ -38,8 +38,4 @@ public class ProductConverter {
         result.setPrice(source.getPrice());
         return result;
     }
-
-
-
-
 }
